@@ -2,6 +2,7 @@
     "name": "Vis",
     "private": true,
     "dependencies": {
+        "jquery": "2.1.3",
         "bootstrap": "~3.3.2",
         "angular": "~1.3.11",
         "flot": "~0.8.3"
