@@ -5,6 +5,7 @@
 *.suo
 *.user
 *.sln.docstates
+src/Vis/bower_components/*
 
 # Build results
 [Dd]ebug/
