@@ -6,6 +6,7 @@ module.exports = function (grunt) {
     // load Grunt plugins from NPM
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-sass');
 
     // configure plugins
     grunt.initConfig({
@@ -15,14 +16,29 @@ module.exports = function (grunt) {
             }
         },
 
+        sass: {                              // Task
+            dist: {                            // Target
+                options: {                       // Target options
+                    style: 'expanded'
+                },
+                files: {                         // Dictionary of files
+                    'wwwroot/main.css': 'assets/site.scss',       // 'destination': 'source'
+                }
+            }
+        },
+
         watch: {
             scripts: {
                 files: ['wwwroot/scripts/**/*.js'],
                 tasks: ['uglify']
+            },
+            css: {
+                files: ['assets/**/*.scss'],
+                tasks: ['sass']
             }
-        }
+        },
     });
 
     // define tasks
-    grunt.registerTask('default', ['uglify', 'watch']);
+    grunt.registerTask('default', ['uglify', 'sass', 'watch' ]);
 };
