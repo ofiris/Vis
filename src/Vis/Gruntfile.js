@@ -36,29 +36,34 @@ module.exports = function (grunt) {
                 files: {
                     'wwwroot/scripts/jquery.js': ['bower_components/jquery/dist/jquery.js'],
                     'wwwroot/scripts/angular.js': ['bower_components/angular/angular.js'],
-                    'wwwroot/scripts/angular-material.js': ['bower_components/angular-material/angular-material.js'],
+                    'wwwroot/scripts/angular-animate.js': ['bower_components/angular-animate/angular-animate.js', ],
+                    'wwwroot/scripts/angular-aria.js': ['bower_components/angular-aria/angular-aria.js'],
+                    'wwwroot/scripts/angular-material.js': [
+                        'bower_components/hammerjs/hammer.js',
+                        'bower_components/angular-material/angular-material.js'                        
+                    ],
                     'wwwroot/css/angular-material.css': ['bower_components/angular-material/angular-material.css'],
-                'wwwroot/scripts/flot-bundle.js': [
-                    'bower_components/flot/jquery.flot.js',
-                    'bower_components/flot/jquery.colorhelpers.js',
-                    'bower_components/flot/jquery.flot.canvas.js',
-                    'bower_components/flot/jquery.flot.categories.js',
-                    'bower_components/flot/jquery.flot.crosshair.js',
-                    'bower_components/flot/jquery.flot.errorbars.js',
-                    'bower_components/flot/jquery.flot.fillbetween.js',
-                    'bower_components/flot/jquery.flot.image.js',
-                    'bower_components/flot/jquery.flot.navigate.js',
-                    'bower_components/flot/jquery.flot.pie.js',
-                    'bower_components/flot/jquery.flot.resize.js',
-                    'bower_components/flot/jquery.flot.selection.js',
-                    'bower_components/flot/jquery.flot.stack.js',
-                    'bower_components/flot/jquery.flot.symbol.js',
-                    'bower_components/flot/jquery.flot.time.js',
-                ]
+                    'wwwroot/scripts/flot-bundle.js': [
+                        'bower_components/flot/jquery.flot.js',
+                        'bower_components/flot/jquery.colorhelpers.js',
+                        'bower_components/flot/jquery.flot.canvas.js',
+                        'bower_components/flot/jquery.flot.categories.js',
+                        'bower_components/flot/jquery.flot.crosshair.js',
+                        'bower_components/flot/jquery.flot.errorbars.js',
+                        'bower_components/flot/jquery.flot.fillbetween.js',
+                        'bower_components/flot/jquery.flot.image.js',
+                        'bower_components/flot/jquery.flot.navigate.js',
+                        'bower_components/flot/jquery.flot.pie.js',
+                        'bower_components/flot/jquery.flot.resize.js',
+                        'bower_components/flot/jquery.flot.selection.js',
+                        'bower_components/flot/jquery.flot.stack.js',
+                        'bower_components/flot/jquery.flot.symbol.js',
+                        'bower_components/flot/jquery.flot.time.js',
+                    ]
                 }
             }
         },
-        
+
         watch: {
             scripts: {
                 files: ['wwwroot/scripts/**/*.js'],
@@ -72,5 +77,5 @@ module.exports = function (grunt) {
     });
 
     // define tasks
-    grunt.registerTask('default', ['uglify', 'sass', 'concat', 'watch' ]);
+    grunt.registerTask('default', ['uglify', 'sass', 'concat', 'watch']);
 };
